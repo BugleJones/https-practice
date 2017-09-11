@@ -8,7 +8,7 @@ module.exports = function getHTML (options, callback) {
         let rawData = "";
         response.on("data", (chunk) => {
           rawData += chunk;
-          console.log(rawData);
+          return callback(rawData);
         });
         //
         // response.on("end", () => {
