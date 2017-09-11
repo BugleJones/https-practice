@@ -11,7 +11,6 @@ function getAndPrintHTMLChunks (options) {
     let rawData = "";
     response.on("data", (chunk) => {
       rawData += chunk;
-      console.log(rawData);
     });
 
     response.on("end", () => {
@@ -26,7 +25,7 @@ function getAndPrintHTMLChunks (options) {
 
 const options = {
   host: "sytantris.github.io",
-  path: "/http-examples/step1.html"
+  path: "/http-examples/step3.html"
 };
 
 getAndPrintHTMLChunks(options);

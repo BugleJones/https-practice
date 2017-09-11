@@ -5,7 +5,7 @@ function getPrintHTMLChunks () {
 
   const requestOptions = {
     host: "sytantris.github.io",
-    path: "/http-examples/step1.html"
+    path: "/http-examples/step2.html"
   };
 
 //Add error checking in later
@@ -16,7 +16,6 @@ function getPrintHTMLChunks () {
     let rawData = "";
     response.on("data", (chunk) => {
       rawData += chunk;
-      console.log(rawData);
     });
 
     response.on("end", () => {
