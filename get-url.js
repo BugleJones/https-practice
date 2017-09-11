@@ -13,18 +13,11 @@ function getAndPrintHTMLChunks () {
   https.get(requestOptions, (response) => {
     response.setEncoding("utf8");
 //Create long string of data
-    let rawData = "";
     response.on("data", (chunk) => {
-      rawData += chunk;
-      console.log(rawData);
-    });
-
-    response.on("end", () => {
-      const parsedData = JSON.parse(rawData);
-      console.log(parsedData);
+      console.log(chunk);
     });
   });
 
-};
+}
 
 getAndPrintHTMLChunks();
