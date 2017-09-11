@@ -1,11 +1,11 @@
 //require through https
 const https = require("https");
 
-function getPrintHTMLChunks (options) {
+function getAndPrintHTMLChunks (options) {
 
 //Add error checking in later
 
-  https.get(requestOptions, (response) => {
+  https.get(options, (response) => {
     response.setEncoding("utf8");
 //Create long string of data
     let rawData = "";
@@ -24,9 +24,9 @@ function getPrintHTMLChunks (options) {
 
 }
 
-const requestOptions = {
+const options = {
   host: "sytantris.github.io",
   path: "/http-examples/step1.html"
 };
 
-getAndPrintHTMLChunks();
+getAndPrintHTMLChunks(options);
