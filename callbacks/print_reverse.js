@@ -7,7 +7,7 @@ var requestOptions = {
 
 function printUpperCase (html) {
 
-  console.log(html.split("").reverse().join());
+  console.log(html.split("").reverse().join(""));
 }
 
 getHTML(requestOptions, printUpperCase);
