@@ -1,6 +1,15 @@
 //require through https
 const https = require("https");
 
+const requestOptions = {
+  host: "sytantris.github.io",
+  path: "/http-examples/step4.html"
+};
+
+function printHTML (html) {
+  console.log(html);
+}
+
 function getHTML (options, callback) {
 
     https.get(options, (response) => {
@@ -14,18 +23,9 @@ function getHTML (options, callback) {
 
       response.on("end", () => {
         const parsedData = JSON.parse(rawData);
-        console.log(parsedData);
+        // console.log(parsedData);
       });
     });
 }
 
-function printHTML (html) {
-  console.log(html);
-}
-
-const options = {
-  host: "sytantris.github.io",
-  path: "/http-examples/step4.html"
-};
-
-getHTML(options);
+getHTML(requestOptions, printHTML);
